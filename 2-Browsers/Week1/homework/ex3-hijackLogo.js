@@ -7,6 +7,10 @@
 ------------------------------------------------------------------------------*/
 function hijackGoogleLogo() {
   // TODO your code goes in here
+  const image = document.getElementsByClassName('lnXdpd');
+  image.src = `https://www.hackyourfuture.dk/static/logo-dark.svg`;
+  image.srcset = `https://www.hackyourfuture.dk/static/logo-dark.svg`;
 }
 
 hijackGoogleLogo();
+

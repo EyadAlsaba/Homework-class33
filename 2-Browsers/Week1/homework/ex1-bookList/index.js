@@ -39,8 +39,56 @@ const myBooks = [
   },
 ];
 
+// Select the header and style it
+const head = document.querySelector('h1');
+head.style.textAlign = 'center';
+head.style.border = '2px solid #eee';
+
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+  // your code goes in here, return the ul element
+
+  //Creat the ul element and style it
+  const booklists = document.createElement('ul');
+  booklists.style.display = 'flex';
+  booklists.style.listStyle = 'none';
+  booklists.style.justifyContent = 'space-around';
+
+  for (let i = 0; i < books.length; i++) {
+    // creating the p element
+    const bookProperties = document.createElement('p');
+    // insert the text content
+    bookProperties.textContent = `${books[i].title} by ${books[i].author}`;
+    // creat the li element
+    const bookListItems = document.createElement('li');
+    // show the content up
+    bookListItems.appendChild(bookProperties);
+
+    // creating the img element
+    const images = document.createElement('img');
+    // set the src attribute for the imgs
+    images.src = `book${i + 1}.jpg`;
+    // append the content
+    bookListItems.appendChild(images);
+
+    // changing the color based on the book is read or not
+    if (books[i].alreadyRead) {
+      bookListItems.style.backgroundColor = 'green';
+    } else {
+      bookListItems.style.backgroundColor = 'red';
+    }
+
+    booklists.appendChild(bookListItems);
+
+    //styles
+    bookListItems.style.padding = '20px';
+    bookListItems.style.width = 'auto';
+    bookListItems.style.height = 'auto';
+    bookListItems.style.border = '3px solid #444';
+    images.style.width = '300px';
+    images.style.height = '300px';
+    bookProperties.style.textAlign = 'center';
+  }
+  return booklists;
 }
 
 const ulElement = createBookList(myBooks);
