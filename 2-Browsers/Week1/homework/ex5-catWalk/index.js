@@ -35,9 +35,9 @@ function catWalk() {
   // start from 0 and each call we will add 10 to it!
   const currentPosition = parseFloat(img.style.left);
   img.style.left = (currentPosition + 10).toString().concat('px');
-
+  const halfImageWidth = img.width
   // The innerWidth of the screen = 1536  divided by 2 to decide the half of the screen!
-  const middlePosition = window.innerWidth / 2;
+  const middlePosition = window.innerWidth / 2 - halfImageWidth;
 
   /*
   When the current position reach out 760 both of the condition is equal to true!
