@@ -1,0 +1,3 @@
+*** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors

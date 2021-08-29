@@ -1,0 +1,6 @@
+*** Unit Test Error Report ***
+
+Command failed: npx jest ex2-checkDoubleDigits.test.js --colors
+
+*** Spell Checker Report ***
+

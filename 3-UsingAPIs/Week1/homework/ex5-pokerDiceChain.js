@@ -21,8 +21,17 @@ function rollTheDices() {
       results.push(value);
       return rollDice(2);
     })
-    .then((value) => {
-      results.push(value);
+    .then((a) => {
+      results.push(a);
+      return rollDice(3);
+    }) .then((b) => {
+      results.push(b);
+      return rollDice(4);
+    }) .then((c) => {
+      results.push(c);
+      return rollDice(5);
+    }).then((d) => {
+      results.push(d);
       return results;
     });
 }

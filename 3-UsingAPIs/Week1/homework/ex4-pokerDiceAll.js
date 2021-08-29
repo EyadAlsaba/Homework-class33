@@ -26,7 +26,13 @@ const rollDice = require('../../helpers/pokerDiceRoller');
 function rollTheDices() {
   // TODO Refactor this function
   const dices = [1, 2, 3, 4, 5];
-  return rollDice(1);
+  return Promise.all([
+    rollDice(dices[0]),
+    rollDice(dices[1]),
+    rollDice(dices[2]),
+    rollDice(dices[3]),
+    rollDice(dices[4]),
+  ])  
 }
 
 rollTheDices()
@@ -35,3 +41,10 @@ rollTheDices()
 
 // ! Do not change or remove the code below
 module.exports = rollTheDices;
+
+/**
+ * My Answer to the question if I understand it right !!!
+ * because of this condetion ==> if (roll < randomRollsToDo) by this 
+ * We keep checking if the roll less then this number (randomRollsToDo) 
+ * then we keep calling our function untill the dice settel on it's nummber!
+ */
