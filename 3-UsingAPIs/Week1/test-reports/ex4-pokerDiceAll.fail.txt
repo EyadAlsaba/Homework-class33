@@ -1,3 +1,0 @@
-*** Unit Test Error Report ***
-
-Command failed: npx jest ex4-pokerDiceAll.test.js --colors

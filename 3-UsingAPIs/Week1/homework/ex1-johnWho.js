@@ -13,13 +13,12 @@ const getAnonName = (firstName) => {
       if (!firstName) {
         reject(new Error("You didn't pass in a first name!"));
       }
-  
-      const fullName = `${firstName} Doe`;
-  
-      resolve(console.log(fullName));
-    }, 1000);
-  })
 
+      const fullName = `${firstName} Doe`;
+
+      resolve(fullName);
+    }, 1000);
+  });
 };
 
 getAnonName('John');

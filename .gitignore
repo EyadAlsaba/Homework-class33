@@ -119,3 +119,6 @@ dist
 .recent.json
 .disclaimer
 @homework*
+sysinfo.json
+3-UsingAPIs/.vscode/settings.json
+test-runner.log

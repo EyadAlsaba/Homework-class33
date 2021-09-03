@@ -32,7 +32,7 @@ function rollTheDices() {
     rollDice(dices[2]),
     rollDice(dices[3]),
     rollDice(dices[4]),
-  ])  
+  ]);
 }
 
 rollTheDices()
@@ -44,7 +44,7 @@ module.exports = rollTheDices;
 
 /**
  * My Answer to the question if I understand it right !!!
- * because of this condetion ==> if (roll < randomRollsToDo) by this 
- * We keep checking if the roll less then this number (randomRollsToDo) 
- * then we keep calling our function untill the dice settel on it's nummber!
+ * because of this condition ==> if (roll < randomRollsToDo) by this
+ * We keep checking if the roll less then this number (randomRollsToDo)
+ * then we keep calling our function until the dice settled on it's number!
  */

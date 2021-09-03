@@ -11,7 +11,6 @@
 
 // TODO Remove callback and return a promise
 function rollDice() {
-  
   return new Promise((resolve, reject) => {
     // Compute a random number of rolls (3-10) that the dice MUST complete
     const randomRollsToDo = Math.floor(Math.random() * 8) + 3;
@@ -52,7 +51,7 @@ module.exports = rollDice;
 /*
 
 My answer to the question is ==> Now we getting a single error because promise call either of tow function (resolve & reject)
-and the first call will determine the state if it's (Pinding || Rejected || Fulfilled) when the
+and the first call will determine the state if it's (Pending || Rejected || Fulfilled) when the
 state of the promise changed from pending to reject it cannot be resolved
 again.
 
