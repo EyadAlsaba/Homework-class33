@@ -10,21 +10,26 @@
 // ! Do not change or remove the next two lines
 const rollDice = require('../../helpers/pokerDiceRoller');
 
-function rollDiceUntil(wantedValue) {
-  // TODO: rewrite this function using async/await
-  return rollDice().then((value) => {
-    if (value !== wantedValue) {
-      return rollDiceUntil(wantedValue);
-    }
-    return value;
-  });
-}
+async function rollDiceUntil(wantedValue) {
+  // I used LET to be able to update the statues of the promise!
 
+  // When this promise resolve to 'ACE' will jump to return and stop execution!
+  let value = await rollDice();
+
+  // Otherwise we provide while loop to keep our function running until the condition met or the promise rejected!
+  while (value !== wantedValue) {
+    value = await rollDice();
+  }
+  return value;
+}
 // TODO refactor this function to use try/catch
-function main() {
-  rollDiceUntil('ACE')
-    .then((results) => console.log('Resolved!', results))
-    .catch((error) => console.log('Rejected!', error.message));
+async function main() {
+  try {
+    const response = await rollDiceUntil('ACE');
+    console.log('Resolved', response);
+  } catch (error) {
+    console.log('Rejected!', error.message);
+  }
 }
 
 main();

@@ -13,16 +13,33 @@ const rollDice = require('../../helpers/pokerDiceRoller');
 function rollTheDices() {
   const dices = [1, 2, 3, 4, 5];
   // TODO complete this function; use Promise.race() and rollDice()
+  const diceRace = Promise.race([
+    rollDice(dices[0]),
+    rollDice(dices[1]),
+    rollDice(dices[2]),
+    rollDice(dices[3]),
+    rollDice(dices[4]),
+  ]);
+  return diceRace;
 }
 
 // Refactor this function to use async/await and try/catch
-function main() {
-  rollTheDices()
-    .then((results) => console.log('Resolved!', results))
-    .catch((error) => console.log('Rejected!', error.message));
+async function main() {
+  try {
+    const response = await rollTheDices();
+    console.log('Resolved', response);
+  } catch (error) {
+    console.log('Rejected!', error.message);
+  }
 }
 
 main();
 
 // ! Do not change or remove the code below
 module.exports = rollTheDices;
+
+/**
+ * My answer to this is because our condition in rollDice function ==> if (roll < randomRollsToDo)
+ * It does not matter which promise faster with the response here, our app keep our function running >
+ * until the condition met!
+ */
